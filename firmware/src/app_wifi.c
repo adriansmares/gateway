@@ -347,6 +347,11 @@ void APP_WIFI_Initialize(void)
  */
 void APP_WIFI_Tasks(void)
 {
+    _activeConfig = CNFG_NONE;
+    _event        = EVENT_NONE;
+
+    return;
+
     static bool      wasNetUp[2] = {true, true}; // this app supports 2 interfaces so far
     static uint32_t  startTick   = 0;
     static IPV4_ADDR dwLastIP    = {-1};
